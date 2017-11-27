@@ -11,7 +11,7 @@ class Api::V1::HerosController < ApplicationController
       next: nil,
       previous: nil,
       last: api_v1_heros_url(page: 1),
-      data: @heros
+      data: @heros.map { |hero| HeroSerializer.new(hero) }
     }.to_json
   end
 
