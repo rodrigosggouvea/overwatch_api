@@ -12,7 +12,6 @@ class CreateHeros < ActiveRecord::Migration[5.1]
       t.string :affiliation
       t.string :base_of_operations
       t.integer :difficulty
-      t.string :url
 
       t.timestamps
     end
