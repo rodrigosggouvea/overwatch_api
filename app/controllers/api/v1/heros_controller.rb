@@ -9,6 +9,7 @@ class Api::V1::HerosController < ApplicationController
       total: @heros.count,
       first: api_v1_heros_url(page: 1),
       next: nil,
+      previous: nil,
       last: api_v1_heros_url(page: 1),
       data: @heros
     }.to_json
