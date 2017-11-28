@@ -6,7 +6,7 @@ class FetchHeroService
     url = 'https://overwatch-api.net/api/v1/hero'
 
     response = JSON.parse(Net::HTTP.get(URI(url)))
-    parse_heroes(response['data'])
+    return parse_heroes(response['data'])
   end
 
   def self.parse_heroes(heroes)
@@ -30,7 +30,7 @@ class FetchHeroService
     hero = Hero.find(hero_id)
     url = "https://overwatch-api.net/api/v1/hero/#{hero.overwatch_api_id}"
     response = JSON.parse(Net::HTTP.get(URI(url)))
-    parse_abilities(response['abilities'])
+    parse_abilities(response['abilities'], hero_id)
   end
 
   def self.parse_abilities(abilities, hero_id)

@@ -18,6 +18,7 @@ RSpec.describe Api::V1::HerosController, type: :controller do
       FetchHeroService.fetch_all
       expect(FetchHeroService).not_to receive(:fetch_all)
       get :index
+      expect(JSON.parse(response.body)['data'].first['id']).to eq(Hero.first.id)
     end
   end
 

@@ -4,5 +4,4 @@ class Ability < ApplicationRecord
   validates :overwatch_api_id, presence: true
   validates :name, presence: true
   validates :description, presence: true
-  validates :is_ultimate, presence: true
 end
