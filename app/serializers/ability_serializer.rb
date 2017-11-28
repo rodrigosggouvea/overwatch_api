@@ -3,6 +3,6 @@ class AbilitySerializer < ActiveModel::Serializer
   has_one :hero
 
   def url
-    api_v1_ability_url(object, host: 'localhost:3000')
+    api_v1_ability_url(object, host: (Rails.env.development? ? 'localhost:3000' : 'https://rodrigosggouveas-overwatch-api.herokuapp.com'))
   end
 end

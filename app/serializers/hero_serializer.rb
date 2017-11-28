@@ -5,6 +5,6 @@ class HeroSerializer < ActiveModel::Serializer
     :age, :height, :affiliation, :base_of_operations, :difficulty, :url
 
   def url
-    api_v1_hero_url(object, host: 'localhost:3000')
+    api_v1_hero_url(object, host: (Rails.env.development? ? 'localhost:3000' : 'https://rodrigosggouveas-overwatch-api.herokuapp.com'))
   end
 end
