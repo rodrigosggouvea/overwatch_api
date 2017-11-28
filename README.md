@@ -14,12 +14,20 @@ Endpoints:
 
 To run this you need to:
 
+* install Ruby 2.3.1;
+
+* install rvm;
+
 * Clone the project;
 
-* `bundle install`
+* `rvm use 2.3.1@overwatch_api --create`;
 
-* `rake db:create db:migrate`
+* `gem install bundler`;
 
-* `rails s`
+* `bundle install`;
+
+* `rake db:create db:migrate`;
+
+* `rails s`;
 
 * Voilá!
