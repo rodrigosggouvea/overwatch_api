@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127223220) do
+ActiveRecord::Schema.define(version: 20171127233200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abilities", force: :cascade do |t|
+    t.bigint "hero_id"
+    t.string "name"
+    t.text "description"
+    t.boolean "is_ultimate"
+    t.integer "overwatch_api_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hero_id"], name: "index_abilities_on_hero_id"
+  end
 
   create_table "heros", force: :cascade do |t|
     t.string "name"
@@ -32,4 +43,5 @@ ActiveRecord::Schema.define(version: 20171127223220) do
     t.integer "overwatch_api_id"
   end
 
+  add_foreign_key "abilities", "heros"
 end

@@ -2,8 +2,7 @@ class Api::V1::HerosController < ApplicationController
   def index
     @heros = Hero.all
     unless @heros.any?
-      FetchHeroService.fetch_all
-      @heros = Hero.all
+      @heros = FetchHeroService.fetch_all
     end
     render json: {
       total: @heros.count,
@@ -18,5 +17,13 @@ class Api::V1::HerosController < ApplicationController
   def show
     @hero = Hero.find(params[:id])
     render json: @hero
+  end
+
+  def abilities
+    @abilities = Hero.find(params[:id]).abilities
+    unless @abilities.any?
+      @abilities = FetchHeroService.fetch_hero_abilities(params[:id])
+    end
+    render json: @abilities
   end
 end

@@ -10,4 +10,8 @@ RSpec.describe Hero, type: :model do
     it { should validate_presence_of(:shield) }
     it { should validate_presence_of(:difficulty) }
   end
+
+  describe "Relationships" do
+    it { should have_many(:abilities) }
+  end
 end
