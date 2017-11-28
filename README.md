@@ -1,8 +1,13 @@
 # RodrigoSGGouvea's OverWatch API
 
-This is a Ruby on Rails app developed to consume Blizard's API for the game Overwatch
+This is a Ruby on Rails app developed to consume Blizzard's API for the game Overwatch
 
 You can check it out at https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/heros
+
+Project TO-DOs:
+
+* Admin panel;
+* Refactor services (so that they fetch and parse data asynchronously via a scheduled job, instead of doing it only if there are any records);
 
 Endpoints:
 
