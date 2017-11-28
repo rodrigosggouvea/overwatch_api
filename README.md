@@ -1,24 +1,25 @@
-# README
+# RodrigoSGGouvea's OverWatch API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails app developed to consume Blizard's API for the game Overwatch
 
-Things you may want to cover:
+You can check it out at https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/heros
 
-* Ruby version
+Endpoints:
 
-* System dependencies
+* Heroes index: https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/heros
+* Hero's info: https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/heros/{:hero_id}
+* Hero's abilities index: https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/heros/{:hero_id}/abilities
+* Abilities index: https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/abilities
+* Ability's info: https://rodrigosggouveas-overwatch-api.herokuapp.com/api/v1/abilities/{:ability_id}
 
-* Configuration
+To run this you need to:
 
-* Database creation
+* Clone the project;
 
-* Database initialization
+* `bundle install`
 
-* How to run the test suite
+* `rake db:create db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+* `rails s`
 
-* Deployment instructions
-
-* ...
+* Voilá!
